@@ -1,0 +1,11 @@
+# Mac files
+.DS_Store
+*/.DS_Store
+
+# Python
+__pycache__
+
+# Other
+resources/*
+.cache-*
+spotitude.config

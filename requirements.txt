@@ -1,0 +1,2 @@
+pandas==0.24.0
+spotipy==2.4.4
