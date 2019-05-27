@@ -8,4 +8,6 @@ __pycache__
 # Other
 resources/*
 .cache-*
+*.csv
+*.html
 spotitude.config
