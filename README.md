@@ -34,5 +34,5 @@ Open up the newly created `spotitude.config` and input your credentials.
 To create your visualization, run:
 
 ```
-python3 spotitude.py
+$ python3 spotitude.py
 ```
