@@ -10,4 +10,5 @@ resources/*
 .cache-*
 *.csv
 *.html
+*.json
 spotitude.config

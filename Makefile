@@ -11,7 +11,7 @@ test:
 
 config:
 	touch spotitude.config && \
-	echo "[DEFAULT]\nUSERNAME=\nSCOPE\nREDIRECT_URI=\nCLIENT_ID=\nCLIENT_SECRET=" > spotitude.config
+	echo "[DEFAULT]\nUSERNAME=\nSCOPE=\nREDIRECT_URI=\nCLIENT_ID=\nCLIENT_SECRET=" > spotitude.config
 
 deps:
 	pip3 install -r requirements.txt
