@@ -43,8 +43,6 @@ You can also choose over what time frame the top tracks are computed by specifyi
 $ python3 spotitude.py --time-range medium_term
 ``` 
 
-
-
 ### Contributing to the Project
 
 Spotify is open to any improvements or fixes. Before submitting a pull request, make sure your code is formatted by running:
