@@ -37,6 +37,14 @@ To create your visualization, run:
 $ python3 spotitude.py
 ```
 
+You can also choose over what time frame the top tracks are computed by specifying the optional argument --time-range. Valid values for time-range are short_term, medium_term and long_term. For example:
+
+```
+$ python3 spotitude.py --time-range medium_term
+``` 
+
+
+
 ### Contributing to the Project
 
 Spotify is open to any improvements or fixes. Before submitting a pull request, make sure your code is formatted by running:
