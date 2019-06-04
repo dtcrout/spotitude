@@ -37,7 +37,7 @@ To create your visualization, run:
 $ python3 spotitude.py
 ```
 
-You can also choose over what time frame the top tracks are computed by specifying the optional argument --time-range. Valid values for time-range are short_term, medium_term and long_term. For example:
+You can also choose over what time frame the top tracks are computed by specifying the optional argument `--time_range`. Valid values for time-range are `short_term`, `medium_term` and `long_term`. For example:
 
 ```
 $ python3 spotitude.py --time-range medium_term

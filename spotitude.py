@@ -14,7 +14,7 @@ if __name__ == "__main__":
     # Parse the input parameters.
     parser = argparse.ArgumentParser(description="Spotitude Customization")
     parser.add_argument(
-        "--time-range",
+        "--time_range",
         type=str,
         default="short_term",
         help="Over what time frame the top tracks are computed. "
