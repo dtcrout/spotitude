@@ -23,7 +23,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     if args.time_range not in ["short_term", "medium_term", "long_term"]:
         raise ValueError(
-            "Valid values for time-range are: long_term, medium_term and short_term."
+            "Valid values for time_range are: long_term, medium_term and short_term."
         )
 
     # Get authentication token for Spotify API
