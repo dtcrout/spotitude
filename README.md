@@ -40,7 +40,7 @@ $ python3 spotitude.py
 You can also choose over what time frame the top tracks are computed by specifying the optional argument `--time_range`. Valid values for `time_range` are `short_term`, `medium_term` and `long_term`. For example:
 
 ```
-$ python3 spotitude.py --time-range medium_term
+$ python3 spotitude.py --time_range medium_term
 ``` 
 
 ### Contributing to the Project
