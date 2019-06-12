@@ -5,7 +5,7 @@ Visualize top 25 tracks from dataframe and display them in a 5x5 grid.
 
 import pandas as pd
 
-PATH = "visualization.html"
+PATH = "index.html"
 
 
 def opening():

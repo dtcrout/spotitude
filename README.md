@@ -20,7 +20,7 @@ First, install the dependencies by running:
 $ make deps
 ```
 
-After the dependencies are installed, we need to configure the credentials. Spotitude requires the user to have access to [Spotify's API](https://developer.spotify.com/).
+After the dependencies are installed, we need to configure the credentials. Spotitude requires the user to have access to [Spotify's API](https://developer.spotify.com/). When creating your new app through the API, set your redirect uri to `http:localhost:8080`.
 Once you have finished creating your app and have your credentials, we need to create a config file to save your credentials. To create a config file, run:
 
 ```
@@ -30,6 +30,14 @@ $ make config
 Open up the newly created `spotitude.config` and input your credentials.
 
 ### Create Visualizations!
+
+Start the web server by running:
+
+```
+$ make server
+```
+
+This will create the page the visualizations will be displayed on. By default Spotitude uses `http://localhost:8080`.
 
 To create your visualization, run:
 
@@ -41,7 +49,7 @@ You can also choose over what time frame the top tracks are computed by specifyi
 
 ```
 $ python3 spotitude.py --time_range medium_term
-``` 
+```
 
 ### Contributing to the Project
 
