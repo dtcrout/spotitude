@@ -12,3 +12,6 @@ resources/*
 *.html
 *.json
 spotitude.config
+
+# Visual Studio Code
+.vscode
