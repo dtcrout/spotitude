@@ -31,9 +31,12 @@ def get_top_tracks(spotify, limit=25, time_range="short_term", save=False):
             album
             track
             album_art
+            id
     """
     # Create dataframe to store values
-    top_tracks_df = pd.DataFrame(columns=["artist", "album", "track", "album_art"])
+    top_tracks_df = pd.DataFrame(
+        columns=["artist", "album", "track", "album_art", "id"]
+    )
 
     # Call Spotify API to get user top tracks
     top_tracks = spotify.current_user_top_tracks(limit=limit, time_range=time_range)
@@ -43,10 +46,17 @@ def get_top_tracks(spotify, limit=25, time_range="short_term", save=False):
         album = item["album"]["name"]
         track = item["name"]
         album_art = item["album"]["images"][1]["url"]
+        identifier = item["id"]
 
         # Append data to dataframe
         top_tracks_df = top_tracks_df.append(
-            {"artist": artist, "album": album, "track": track, "album_art": album_art},
+            {
+                "artist": artist,
+                "album": album,
+                "track": track,
+                "album_art": album_art,
+                "id": identifier,
+            },
             ignore_index=True,
         )
 
