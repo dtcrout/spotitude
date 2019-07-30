@@ -39,3 +39,21 @@ if __name__ == "__main__":
 
         # Create visualization
         make_visualization(top_tracks_df)
+
+    import eel
+    from playlist import Playlist
+    import webbrowser
+
+    eel.init(".")
+
+    @eel.expose
+    def create_playlist():
+        print("Playlist created...")
+        spotitude_playlist = Playlist(spotify)
+        spotitude_playlist.create_spotitude_playlist(
+            args.time_range, top_tracks_df["id"].tolist()
+        )
+        webbrowser.open_new(spotitude_playlist.url)
+
+    eel.start("index.html", mode="chrome-app")
+
