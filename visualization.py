@@ -10,12 +10,15 @@ PATH = "index.html"
 
 def opening():
     """HTML boilerplate."""
-    return """<html>\n<table style="width:0%">\n<head><title>spotitude</title><script type="text/javascript" src="/eel.js"></script>
+    return """<html>\n<table style="width:0%">\n<head><title>spotitude</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script type="text/javascript" src="/eel.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script type="text/javascript">
         $(function(){                    
                     $("#btn").click(function(){
                         eel.create_playlist();
+                        alert("Playlist created, opening now...");
                     });
         }); 
         </script>
@@ -25,7 +28,7 @@ def opening():
 
 def closing():
     """HTML boilerplate."""
-    return """</tr></table>\n<div align='center'><input type='button' id='btn' class='btn btn-primary' value='Create Playlist'></div></html>"""
+    return """</tr></table>\n<div align='center' style='margin-top: 10px'><button type='button' id='btn' class='btn btn-primary'>Create Playlist</button></div></html>"""
 
 
 def new_entry(path, scale=40):

@@ -48,12 +48,15 @@ if __name__ == "__main__":
 
     @eel.expose
     def create_playlist():
+        """
+            Handles button press from top tracks visualization
+        """
         print("Playlist created...")
         spotitude_playlist = Playlist(spotify)
         spotitude_playlist.create_spotitude_playlist(
             args.time_range, top_tracks_df["id"].tolist()
         )
-        webbrowser.open_new(spotitude_playlist.url)
+        webbrowser.open_new(spotitude_playlist.url)  # open playlist in web browser
 
     eel.start("index.html", mode="chrome-app")
 
