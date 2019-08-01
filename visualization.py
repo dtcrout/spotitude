@@ -10,7 +10,7 @@ PATH = "index.html"
 
 def opening():
     """HTML boilerplate."""
-    return """<html>\n<table style="width:0%">\n<tr>\n"""
+    return """<html>\n<head><meta charset="utf-8"></head>\n<table style="width:0%">\n<tr>\n"""
 
 
 def closing():
