@@ -7,7 +7,10 @@ from config import Config
 from data import get_top_tracks
 import spotipy
 from visualization import make_visualization
+from playlist import Playlist
 import argparse
+import eel
+import webbrowser
 
 
 if __name__ == "__main__":
@@ -40,23 +43,24 @@ if __name__ == "__main__":
         # Create visualization
         make_visualization(top_tracks_df)
 
-    import eel
-    from playlist import Playlist
-    import webbrowser
+        eel.init(".")
 
-    eel.init(".")
+        @eel.expose
+        def create_playlist():
+            """
+                Handles button press from top tracks visualization
+            """
+            print("inside function")
 
-    @eel.expose
-    def create_playlist():
-        """
-            Handles button press from top tracks visualization
-        """
-        print("Playlist created...")
-        spotitude_playlist = Playlist(spotify)
-        spotitude_playlist.create_spotitude_playlist(
-            args.time_range, top_tracks_df["id"].tolist()
-        )
-        webbrowser.open_new(spotitude_playlist.url)  # open playlist in web browser
+            spotitude_playlist = Playlist(spotify)
+            spotitude_playlist.create_spotitude_playlist(
+                args.time_range, top_tracks_df["id"].tolist()
+            )
+            print(
+                f"Playlist '{spotitude_playlist.name}' created.\n{spotitude_playlist.url}"
+            )
+            # pylint: disable=no-member
+            eel.display_alert(spotitude_playlist.name, spotitude_playlist.url)
+            webbrowser.open_new(spotitude_playlist.url)  # open playlist in web browser
 
-    eel.start("index.html", mode="chrome-app")
-
+        eel.start("index.html", mode="chrome")

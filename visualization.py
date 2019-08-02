@@ -15,12 +15,16 @@ def opening():
         <script type="text/javascript" src="/eel.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script type="text/javascript">
+        eel.expose(display_alert); // Expose this function to Python
+        function display_alert(name, url) {
+            alert("Playlist \'" + name + "\' created. Opening " + url);
+        }
+
         $(function(){                    
                     $("#btn").click(function(){
                         eel.create_playlist();
-                        alert("Playlist created, opening now...");
                     });
-        }); 
+        });
         </script>
         </head>\n
             <table><tr>\n"""
