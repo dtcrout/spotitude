@@ -10,8 +10,6 @@ from visualization import make_visualization
 from playlist import Playlist
 import argparse
 import eel
-import webbrowser
-
 
 if __name__ == "__main__":
     # Parse the input parameters.
@@ -50,8 +48,6 @@ if __name__ == "__main__":
             """
                 Handles button press from top tracks visualization
             """
-            print("inside function")
-
             spotitude_playlist = Playlist(spotify)
             spotitude_playlist.create_spotitude_playlist(
                 args.time_range, top_tracks_df["id"].tolist()
@@ -59,8 +55,21 @@ if __name__ == "__main__":
             print(
                 f"Playlist '{spotitude_playlist.name}' created.\n{spotitude_playlist.url}"
             )
+
+            # Change 'Create Playlist' to 'Open Playlist' and write hidden URL to html file
+            with open("index.html", "r") as spot_html:
+                filedata = spot_html.read()
+                filedata = filedata.replace("Create Playlist", "Open Playlist")
+                # Change onclick action to open playlist url, also possible independent from python script
+                filedata = filedata.replace(
+                    "onclick='create_playlist()'",
+                    f"onclick=\"window.open('{spotitude_playlist.url}','_blank','resizable=yes')",
+                )
+
+            with open("index.html", "w") as spot_html:
+                spot_html.write(filedata)
+
             # pylint: disable=no-member
-            eel.display_alert(spotitude_playlist.name, spotitude_playlist.url)
-            webbrowser.open_new(spotitude_playlist.url)  # open playlist in web browser
+            eel.open_url(spotitude_playlist.url)  # open playlist in web browser
 
         eel.start("index.html", mode="chrome")
