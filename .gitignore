@@ -12,6 +12,7 @@ resources/*
 *.html
 *.json
 spotitude.config
+Pipfile*
 
 # Visual Studio Code
 .vscode

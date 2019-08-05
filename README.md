@@ -54,7 +54,7 @@ $ pipenv run python3 spotitude.py --time_range medium_term
 ```
 
 ### De-/Activating the virtualenv shell
-Instead of prefixing the commands with `pipenv run`, you can also start shell subprocess of by typing in the project's directory:
+Instead of prefixing the commands with `pipenv run`, you can also start a shell subprocess of by typing in the project's directory:
 
 ```
 $ pipenv shell
