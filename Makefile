@@ -12,7 +12,7 @@ test:
 
 config:
 	touch spotitude.config && \
-	printf "[DEFAULT]\nUSERNAME=\nSCOPE=user-top-read\nREDIRECT_URI=http://localhost:8080\nCLIENT_ID=\nCLIENT_SECRET=" > spotitude.config
+	printf "[DEFAULT]\nUSERNAME=\nSCOPE=user-top-read playlist-modify-private\nREDIRECT_URI=http://localhost:8080\nCLIENT_ID=\nCLIENT_SECRET=" > spotitude.config
 
 deps:
 	pip3 install -r requirements.txt

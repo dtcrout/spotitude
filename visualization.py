@@ -10,12 +10,29 @@ PATH = "index.html"
 
 def opening():
     """HTML boilerplate."""
-    return """<html>\n<head><meta charset="utf-8"></head>\n<table style="width:0%">\n<tr>\n"""
+
+    return """<html>\n<head>\n<meta charset="utf-8">\n<title>spotitude</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script type="text/javascript" src="/eel.js"></script>
+        <script type="text/javascript">
+        eel.expose(open_url); // Expose this function to Python
+        function open_url(url) {
+            window.open(url,'_blank','resizable=yes'); // Opens new window with same settings
+        }
+
+        function create_playlist(){
+            eel.create_playlist();
+            location.reload(); // Reload website to reflect changes to index.html
+                    }
+        </script>
+        </head>\n<table style="width:0%"><tr>\n"""
 
 
 def closing():
     """HTML boilerplate."""
-    return """</tr>\n</html>"""
+    return """</tr></table>\n<div align='center' style='margin-top: 10px'>
+        <button type="button" id="btn" class="btn btn-primary" onclick='create_playlist()'">Create Playlist</button>
+        </div>\n</html>"""
 
 
 def new_entry(path, scale=40):

@@ -8,7 +8,7 @@ from data import get_top_tracks
 import spotipy
 from visualization import make_visualization
 import argparse
-
+import gui
 
 if __name__ == "__main__":
     # Parse the input parameters.
@@ -39,3 +39,7 @@ if __name__ == "__main__":
 
         # Create visualization
         make_visualization(top_tracks_df)
+
+        # Open visualization using Eel as interactive GUI
+        gui.open_visualization(spotify, top_tracks_df, args.time_range)
+
