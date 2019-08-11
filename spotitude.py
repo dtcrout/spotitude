@@ -7,9 +7,8 @@ from config import Config
 from data import get_top_tracks
 import spotipy
 from visualization import make_visualization
-from playlist import Playlist
 import argparse
-import eel
+import gui
 
 if __name__ == "__main__":
     # Parse the input parameters.
@@ -41,35 +40,6 @@ if __name__ == "__main__":
         # Create visualization
         make_visualization(top_tracks_df)
 
-        eel.init(".")
+        # Open visualization using Eel as interactive GUI
+        gui.open_visualization(spotify, top_tracks_df, args.time_range)
 
-        @eel.expose
-        def create_playlist():
-            """
-                Handles button press from top tracks visualization
-            """
-            spotitude_playlist = Playlist(spotify)
-            spotitude_playlist.create_spotitude_playlist(
-                args.time_range, top_tracks_df["id"].tolist()
-            )
-            print(
-                f"Playlist '{spotitude_playlist.name}' created.\n{spotitude_playlist.url}"
-            )
-
-            # Change 'Create Playlist' to 'Open Playlist' and write hidden URL to html file
-            with open("index.html", "r") as spot_html:
-                filedata = spot_html.read()
-                filedata = filedata.replace("Create Playlist", "Open Playlist")
-                # Change onclick action to open playlist url, also possible independent from python script
-                filedata = filedata.replace(
-                    "onclick='create_playlist()'",
-                    f"onclick=\"window.open('{spotitude_playlist.url}','_blank','resizable=yes')",
-                )
-
-            with open("index.html", "w") as spot_html:
-                spot_html.write(filedata)
-
-            # pylint: disable=no-member
-            eel.open_url(spotitude_playlist.url)  # open playlist in web browser
-
-        eel.start("index.html", mode="chrome")
