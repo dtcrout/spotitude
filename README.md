@@ -50,13 +50,13 @@ $ source venv/bin/activate
 While using the virtual environment you can create a visualization by running:
 
 ```
-$ python3 spotitude.py
+$ python spotitude.py
 ```
 
 You can also choose over what time frame the top tracks are computed by specifying the optional argument `--time_range`. Valid values for `time_range` are `short_term`, `medium_term` and `long_term`. For example:
 
 ```
-$ python3 spotitude.py --time_range medium_term
+$ python spotitude.py --time_range medium_term
 ```
 
 If you want to stop using the using the virtual environment, simply use:
