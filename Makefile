@@ -27,4 +27,3 @@ clean: deps
 	. venv/bin/activate ;\
 	black . --exclude venv && \
 	rm -rf *.html *.csv .cache-* __pycache__ venv/
-	
