@@ -7,21 +7,27 @@ help:
 	@echo "clean				Remove artifacts and standardize repo."
 
 # CORE ]------------------------------------------------------------------------
-test:
-	black --check .
+venv: venv/bin/activate
+venv/bin/activate: requirements.txt
+	test -d venv || python3 -m venv venv
+	venv/bin/pip3 install -r requirements.txt
+	touch venv/bin/activate
+
+test: venv
+	. venv/bin/activate ;\
+	black --check . --exclude venv
 
 config:
 	touch spotitude.config && \
 	printf "[DEFAULT]\nUSERNAME=\nSCOPE=user-top-read\nREDIRECT_URI=http://localhost:8080\nCLIENT_ID=\nCLIENT_SECRET=" > spotitude.config
 
-deps:
-	pip3 install pipenv
-	pipenv install
+deps: venv
 
 server:
 	python3 -m http.server 8080
 
-clean:
-	black . && \
-	rm -rf *.html *.csv .cache-* __pycache__ Pipfile*
+clean: venv
+	. venv/bin/activate ;\
+	black . --exclude venv && \
+	rm -rf *.html *.csv .cache-* __pycache__ venv/
 	
