@@ -42,4 +42,3 @@ if __name__ == "__main__":
 
         # Open visualization using Eel as interactive GUI
         gui.open_visualization(spotify, top_tracks_df, args.time_range)
-
