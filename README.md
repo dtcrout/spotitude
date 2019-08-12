@@ -67,4 +67,4 @@ Spotitude is open to any improvements or fixes. Before submitting a pull request
 $ make clean
 ```
 
-This is also removing your Pipfile and Pipfile.lock created by pipenv.
+This is also removing the `venv` with your dependencies.

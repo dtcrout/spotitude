@@ -1,3 +1,4 @@
 black==19.3b0
 pandas==0.24.0
-git+https://github.com/plamere/spotipy.git#egg=spotipy
+git+https://github.com/plamere/spotipy.git
+eel==0.10.4
