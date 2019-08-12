@@ -59,6 +59,11 @@ You can also choose over what time frame the top tracks are computed by specifyi
 $ python3 spotitude.py --time_range medium_term
 ```
 
+If you want to stop using the using the virtual environment, simply use:
+```
+$ deactivate
+``` 
+
 ### Contributing to the Project
 
 Spotitude is open to any improvements or fixes. Before submitting a pull request, make sure your code is formatted by running:
