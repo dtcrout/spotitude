@@ -20,7 +20,9 @@ First, install the dependencies by running:
 $ make deps
 ```
 
-After the dependencies are installed, we need to configure the credentials. Spotitude requires the user to have access to [Spotify's API](https://developer.spotify.com/). When creating your new app through the API, set your redirect uri to `http:localhost:8080`.
+By using Python3's [venv](https://docs.python.org/3/library/venv.html), we make sure that the dependencies only reside in the scope of this project.
+
+After the installation is complete, we need to configure the credentials. Spotitude requires the user to have access to [Spotify's API](https://developer.spotify.com/). When creating your new app through the API, set your redirect uri to `http:localhost:8080`.
 Once you have finished creating your app and have your credentials, we need to create a config file to save your credentials. To create a config file, run:
 
 ```
@@ -39,22 +41,35 @@ $ make server
 
 This will create the page the visualizations will be displayed on. By default Spotitude uses `http://localhost:8080`.
 
-To create your visualization, run:
+Next, you should also make sure to activate the virtual environment first by running:
 
 ```
-$ python3 spotitude.py
+$ source venv/bin/activate
+```
+
+While using the virtual environment you can create a visualization by running:
+
+```
+$ python spotitude.py
 ```
 
 You can also choose over what time frame the top tracks are computed by specifying the optional argument `--time_range`. Valid values for `time_range` are `short_term`, `medium_term` and `long_term`. For example:
 
 ```
-$ python3 spotitude.py --time_range medium_term
+$ python spotitude.py --time_range medium_term
 ```
+
+If you want to stop using the using the virtual environment, simply use:
+```
+$ deactivate
+``` 
 
 ### Contributing to the Project
 
-Spotify is open to any improvements or fixes. Before submitting a pull request, make sure your code is formatted by running:
+Spotitude is open to any improvements or fixes. Before submitting a pull request, make sure your code is formatted by running:
 
 ```
 $ make clean
 ```
+
+This is also removing the `venv` with your dependencies.

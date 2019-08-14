@@ -12,6 +12,7 @@ resources/*
 *.html
 *.json
 spotitude.config
+venv/
 
 # Visual Studio Code
 .vscode
