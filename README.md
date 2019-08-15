@@ -31,6 +31,9 @@ $ make config
 
 Open up the newly created `spotitude.config` and input your credentials.
 
+See [here](SETUP.md)
+
+
 ### Create Visualizations!
 
 Start the web server by running:
