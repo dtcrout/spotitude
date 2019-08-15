@@ -31,6 +31,8 @@ $ make config
 
 Open up the newly created `spotitude.config` and input your credentials.
 
+### Configuration
+
 See [here](SETUP.md)
 
 
