@@ -1,4 +1,4 @@
-#Setting up the config file 
+# Setting up the config file 
 In order to use Spotitude, you will need to create a config file
 
 Before starting, run
@@ -9,7 +9,7 @@ $ make config
 
 Open up the file spotitude.config. This will be where you input your credentials
 
-###Setting up a Spotify Developer Account
+### Setting up a Spotify Developer Account
 In order to use Spotitude, you must set up a Spotify Developer account. 
 Go to https://developer.spotify.com/dashboard/login to sign up for an account or login. 
 
