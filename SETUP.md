@@ -6,7 +6,7 @@ Once you have finished creating your app and have your credentials, we need to c
 $ make config
 ```
 
-Once you've run make config, there should be a file in the main directory that looks like this:
+Once you've run make config, there should be a file in the main directory that looks like this when you open it:
 ![Example] (examples/default_config.png)
 
 ### Entering Your Credentials
