@@ -16,15 +16,15 @@ Now, you will need to enter your credentials. Note that the values entered <b>sh
 * For USERNAME, input your Spotify username, so that it reads USERNAME=yourUsername. <b>Your username is not what you use to log into your account</b> and is normally found in <b>Profile > Account > Account overview</b> by logging into [Spotify's website](https://www.spotify.com/).
 * You should not need to modify the SCOPE variable. 
 
-### Entering Your REDIRECT_URI
-You don't need to modify REDIRECT_URI either, but note that the redirect URI needs to be configured in your Spotify app in your developer's account, as disccused in the [README](README.md). If you haven't already, go to [Spotify's Developer Dashboard](https://developer.spotify.com/dashboard/applications) and click "Create a Client ID". When creating your new app through the API, set your redirect uri to `http:localhost:8080`.
+### Entering Your Redirect URI
+You don't need to modify REDIRECT_URI either, but note that the redirect URI needs to be configured in your Spotify app in your developer's account, as disccused in the [README](README.md). If you haven't already, go to [Spotify's Developer Dashboard](https://developer.spotify.com/dashboard/applications), log in, and click "Create a Client ID". When creating your new app through the API, set your redirect URI to `http:localhost:8080`.
 If you have done this correctly, your settings page should now look like this:
 
 ![Example](examples/uri_settings.png)
 
-Make sure that the redirect URI is exactly the same between your app and what's in spotitude.config, e.g. one cannot be https://google.com/ and the other https://google.com.
+Make sure that the redirect URI is exactly the same between your app and what's in `spotitude.config`, e.g. one cannot be https://google.com/ and the other https://google.com.
 
-### Entering Your CLIENT_ID and CLIENT_SECRET
+### Entering Your Client ID and Client Secret Key
 You will find the values that you need for CLIENT_ID and CLIENT_SECRET through the Spotify for Developers' [Dashboard](https://developer.spotify.com/dashboard/applications). Once you log in, the dashboard screen should look like this:
 
 ![Example](examples/dashboard.png)
