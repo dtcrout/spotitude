@@ -10,11 +10,11 @@ Once you've run make config, there should be a file in the main directory that l
 ![Example] (examples/default_config.png)
 
 ### Entering Your Credentials
-Now, you will need to enter your credentials
+Now, you will need to enter your credentials. Note that the values entered <b>SHOULD NOT CONTAIN QUOTES</b> (e.g. REDIRECT_URI=https://google.com <b>but not</b> REDIRECT_URI="https://google.com").
 
-* For USERNAME, input your Spotify username, so that it reads USERNAME=yourUsername. 
+* For USERNAME, input your Spotify username, so that it reads USERNAME=yourUsername. <b>Your username is not what you use to log into your account</b> and is normally found in <b>Profile > Account > Account overview</b> by logging into [Spotify's website](https://www.spotify.com/)
 * You should not need to modify the SCOPE variable. 
-* You don't need to modify REDIRECT_URI either, but be sure that you have added this redirect uri to your app settings as disccused in the [README](README.md).
+* You don't need to modify REDIRECT_URI either, but note that the redirect URI needs to be configured in your Spotify app in your developer's account, as disccused in the [README](README.md). Make sure that the redirect URI is exactly the same between your app and what's in spotitude.config, e.g. one cannot be https://google.com/ and the other https://google.com
 
 You will find the values that you need for CLIENT_ID and CLIENT_SECRET through the Spotify for Developers' [Dashboard](https://developer.spotify.com/dashboard/applications). The dashboard screen should look like this:
 ![Example] (examples/dashboard.png)
@@ -23,3 +23,9 @@ Click on the app that you created earlier. When you click on the app that you cr
 In the CLIENT_ID and CLIENT_SECRET fields in your `spotitude.config`, input the Client Id and Client Secret Key as they appear in your broswer.
 
 Your `spotitude.config` file should now be ready to go!
+
+### Common Issues and Fixes
+* If you log in to spotify with a Facebook account, find your username in the Spotify mobile app in Settings > Account.
+* If you find that you have issues with scope or with your uri after carefully following the directions above, try using https://google.com for your redirect uri. See also [this issue](https://github.com/dtcrout/spotitude/issues/11).
+* Double check your redirect url in your config file and app and make sure they are exactly the same.
+* It also helps to make sure you are running the app with the proper version of Python with the dependencies installed.
