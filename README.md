@@ -22,14 +22,16 @@ $ make deps
 
 By using Python3's [venv](https://docs.python.org/3/library/venv.html), we make sure that the dependencies only reside in the scope of this project.
 
-After the installation is complete, we need to configure the credentials. Spotitude requires the user to have access to [Spotify's API](https://developer.spotify.com/). When creating your new app through the API, set your redirect uri to `http:localhost:8080`.
+After the installation is complete, we need to configure the credentials. Spotitude requires the user to have access to [Spotify's API](https://developer.spotify.com/). Go to [Dashboard](https://developer.spotify.com/dashboard/applications) and click "Create a Client ID". When creating your new app through the API, set your redirect uri to `http:localhost:8080`.
+If you have done this correctly, your settings page should now look like this:
+![Example] (examples/uri_settings.png)
 Once you have finished creating your app and have your credentials, we need to create a config file to save your credentials. To create a config file, run:
 
 ```
 $ make config
 ```
 
-Open up the newly created `spotitude.config` and input your credentials.
+Open up the newly created `spotitude.config` and [input your credentials](SETUP.md).
 
 ### Create Visualizations!
 
