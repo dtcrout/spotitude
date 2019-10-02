@@ -8,7 +8,7 @@ $ make config
 
 Once you've run make config, there should be a file in the main directory that looks like this when you open it:
 
-![Example] (examples/default_config.png)
+![Example](examples/default_config.png)
 
 ### Entering Your Credentials
 Now, you will need to enter your credentials. Note that the values entered <b>should not contain quotes</b> (e.g. REDIRECT_URI=https://google.com).
@@ -19,11 +19,11 @@ Now, you will need to enter your credentials. Note that the values entered <b>sh
 
 You will find the values that you need for CLIENT_ID and CLIENT_SECRET through the Spotify for Developers' [Dashboard](https://developer.spotify.com/dashboard/applications). Once you log in, the dashboard screen should look like this:
 
-![Example] (examples/dashboard.png)
+![Example](examples/dashboard.png)
 
 Click on the app that you created earlier. When you click on the app that you created, it should look like this:
 
-![Example] (examples/app_info.png)
+![Example](examples/app_info.png)
 
 In the CLIENT_ID and CLIENT_SECRET fields in your `spotitude.config`, input the Client Id and Client Secret Key as they appear in your broswer.
 
