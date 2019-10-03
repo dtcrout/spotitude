@@ -29,7 +29,7 @@ Once you have finished creating your app and have your credentials, we need to c
 $ make config
 ```
 
-Open up the newly created `spotitude.config` and input your credentials.
+Open up the newly created `spotitude.config` and [input your credentials](SETUP.md).
 
 ### Create Visualizations!
 
